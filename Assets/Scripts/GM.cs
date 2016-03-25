@@ -56,8 +56,14 @@ public class GM : MonoBehaviour
             GameOver();
         }
     }
+
 	void GameOver()
 	{
 
 	}
+
+    void Win()
+    {
+
+    }
 }
