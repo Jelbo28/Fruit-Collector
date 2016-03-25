@@ -3,8 +3,11 @@ using System.Collections;
 
 public class WinTrigger : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    void OnTriggerExit(Collider other)
     {
-        GM.Instance.Win();
+        if (other.tag == "Player")
+        {
+            GM.instance.Win();
+        }
     }
 }

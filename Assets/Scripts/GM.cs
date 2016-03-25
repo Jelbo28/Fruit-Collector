@@ -6,10 +6,6 @@ public class GM : MonoBehaviour
 {
     #region variables
     [SerializeField]
-	int time = 0;
-	[SerializeField]
-	int score = 0;
-    [SerializeField]
     float timeLeft;
 
 
@@ -20,8 +16,8 @@ public class GM : MonoBehaviour
 	[SerializeField]
 	GameObject player;
 
-	[SerializeField]
-	static GM instance = null;
+    int score = 0;
+	public static GM instance = null;
 
 	AudioSource appleCollect;
     #endregion
@@ -62,8 +58,15 @@ public class GM : MonoBehaviour
 
 	}
 
-    void Win()
+    public void Win()
     {
+        Debug.Log("Win!");
+        Time.timeScale = 0;
+    }
 
+    public void UpdateScore()
+    {
+        score++;
+        scoreText.text = ("Score: " + score);
     }
 }
