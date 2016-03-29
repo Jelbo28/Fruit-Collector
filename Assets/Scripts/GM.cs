@@ -7,7 +7,12 @@ public class GM : MonoBehaviour
     #region variables
     [SerializeField]
     float timeLeft;
-
+    [SerializeField]
+    GameObject gameOver;
+    [SerializeField]
+    GameObject youLose;
+    [SerializeField]
+    GameObject youWin;
 
     [SerializeField]
 	Text timeText;
@@ -55,13 +60,17 @@ public class GM : MonoBehaviour
 
 	void GameOver()
 	{
-
-	}
+        Time.timeScale = 0;
+        gameOver.SetActive(true);
+        youLose.SetActive(true);
+    }
 
     public void Win()
     {
-        Debug.Log("Win!");
-        Time.timeScale = 0;
+        //Debug.Log("Win!");
+        //Time.timeScale = 0;
+        gameOver.SetActive(true);
+        youWin.SetActive(true);
     }
 
     public void UpdateScore()
